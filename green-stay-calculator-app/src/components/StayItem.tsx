@@ -5,8 +5,11 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { StarComponent } from './StarComponent';
 import { FormControl, Select, MenuItem, InputLabel } from '@mui/material';
 
-const StyledSelect = styled(Select)`
-    padding: 10px;
+const arrNumbers = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh'];
+
+
+const Wrapper = styled.div`
+    margin-top: 3em;
 `
 
 const DeleteLink = styled.a`
@@ -21,12 +24,15 @@ const ItemWrapper = styled.div`
 `
 
 const FirstItemWrapper = styled(ItemWrapper)`
-    transform:translateY(-16px);
+    transform: translateY(-18px);
 `
 
 const StyledDeleteIcon = styled(DeleteIcon)`
     color: gray;
     transform: translateY(8px);
+`
+const SectionTitle = styled.h3`
+    margin-bottom:0;
 `
 
 type ItemProps = {
@@ -46,8 +52,8 @@ export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactEle
 
     return (
         <div>
-            <h3>{itemNumber}. stay {(itemNumber !== 1) && <DeleteLink href="" onClick={() => deleteHandler(itemNumber)}><StyledDeleteIcon fontSize="small" /></DeleteLink>}</h3>
-            <div>
+            <Wrapper>
+                <SectionTitle>{arrNumbers[itemNumber]} stay {(itemNumber !== 0) && <DeleteLink href="" onClick={() => deleteHandler(itemNumber)}><StyledDeleteIcon fontSize="small" /></DeleteLink>}</SectionTitle>
                 <FirstItemWrapper>
                     <p>In which region or land did you stay?</p>
                     <FormControl fullWidth size="small">
@@ -104,7 +110,7 @@ export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactEle
                         </Select>
                     </FormControl>
                 </ItemWrapper>
-            </div>
+            </Wrapper>
         </div>
     )
 };

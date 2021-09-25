@@ -73,7 +73,7 @@ export const CalculatorPage: FC<PageProps> = ({ id }): ReactElement => {
         <div>
             <Header />
             {items.map((itemNumber, index) => (
-                <StayItem key={itemNumber} itemNumber={itemNumber} deleteHandler={() => deleteHandler(itemNumber)} />
+                <StayItem key={index} itemNumber={index} deleteHandler={() => deleteHandler(itemNumber)} />
             ))}
 
             <AddItemLink onClick={() => onAddStayClick()} ><StyledControlPointIcon /><ItemLinkLabel>Add another stay</ItemLinkLabel></AddItemLink>
