@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   left: 25%;
   transform: translateY(-50%);
   border-radius: 12px;
-  padding: 2em 5em 5em  5em;
+  padding: 2em 5em 2.5em 5em;
   box-shadow: 10px 5px 5px #BBB;
   `
 

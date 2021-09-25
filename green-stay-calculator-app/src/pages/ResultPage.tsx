@@ -49,6 +49,14 @@ const TextFieldWrapper = styled.div`
     width:320px;
     display: inline-block;
 `
+const TextWrapper = styled.div`
+    line-height: .8;
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+`
+const Spacer = styled.div`
+    height: 5em;
+`
 
 type PageProps = {
     id: number;
@@ -66,14 +74,17 @@ export const ResultPage: FC<PageProps> = ({ id }): ReactElement => {
             <StyledLink to="/">back</StyledLink>
             <Header />
             <ResultComponent />
-            <Label>Get more information on the CO2 balance of your hotel stay via e-mail.</Label>
-            <FatLabel>Type in your e-mail for more information</FatLabel>
+            <TextWrapper>
+                <Label>Get more information on the CO2 balance of your hotel stay via e-mail.</Label>
+                <FatLabel>Type in your e-mail for more information</FatLabel>
+            </TextWrapper>
             <Footer>
                 <TextFieldWrapper>
                     <StyledTextField id="outlined-basic" label="e-mail" variant="outlined" size="small" fullWidth />
                 </TextFieldWrapper>
                 <StyledButton onClick={() => buttonClicked()}>Confirm</StyledButton>
             </Footer>
+            <Spacer />
         </div>
     )
 };
