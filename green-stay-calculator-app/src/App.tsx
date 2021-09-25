@@ -14,10 +14,17 @@ import styled from 'styled-components';
 declare module 'react-router-dom'
 
 const Wrapper = styled.div`
-  margin: auto;
   width: 50%;
-  border: 3px solid green;
+  background-color: #fff;
   padding: 10px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+  border-radius: 12px;
+  padding: 2em 5em 5em  5em;
+  box-shadow: 10px 5px 5px #BBB;
   `
 
 function App() {

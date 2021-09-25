@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {
     Link
 } from "react-router-dom";
+import { Header } from '../components/Header';
 
 
 type PageProps = {
@@ -14,7 +15,7 @@ export const ResultPage: FC<PageProps> = ({ id }): ReactElement => {
     /* function body */
     return (
         <div>
-            <h1>Result Page</h1>
+            <Header />
             <Link to="/">back</Link>
         </div>
     )
