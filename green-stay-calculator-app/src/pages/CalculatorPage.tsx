@@ -50,24 +50,27 @@ const ItemLinkLabel = styled.span`
 export const CalculatorPage = (): ReactElement => {
 
     const [items, setItems] = useState([1]);
+    const [idCounter, setIdCounter] = useState(1);
 
     const onAddStayClick = () => {
+        setIdCounter(idCounter + 1)
         const newItems = [...items];
-        newItems.push(items.length + 1);
+        newItems.push(idCounter);
         setItems(newItems);
     }
 
-    const deleteHandler = (index: number) => {
+    const deleteHandler = (id: number) => {
         const newItems = [...items];
-        newItems.splice(index, 1);
+        const itemIdIndex = newItems.indexOf(id);
+        newItems.splice(itemIdIndex, 1);
         setItems([...newItems]);
     }
 
     return (
         <div>
             <Header />
-            {items.map((itemNumber, index) => (
-                <StayItem key={itemNumber} itemNumber={index} deleteHandler={() => deleteHandler(index)} />
+            {items.map((id, index) => (
+                <StayItem key={id} id={id} itemNumber={index} deleteHandler={() => deleteHandler(id)} />
             ))}
 
             <AddItemLink onClick={() => onAddStayClick()} ><StyledControlPointIcon /><ItemLinkLabel>Add another stay</ItemLinkLabel></AddItemLink>

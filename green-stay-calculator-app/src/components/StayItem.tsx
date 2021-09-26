@@ -36,15 +36,16 @@ const SectionTitle = styled.h3`
 type ItemProps = {
     itemNumber: number;
     deleteHandler: Function;
+    id: number;
 }
 
 
-export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactElement => {
+export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler, id }): ReactElement => {
 
     return (
         <div>
             <Wrapper>
-                <SectionTitle>{arrNumbers[itemNumber]} stay {(itemNumber !== 0) && <StyledDeleteIcon fontSize="small" onClick={() => deleteHandler(itemNumber)} />}</SectionTitle>
+                <SectionTitle>{arrNumbers[itemNumber]} stay {(itemNumber !== 0) && <StyledDeleteIcon fontSize="small" onClick={() => deleteHandler(id)} />}</SectionTitle>
                 <FirstItemWrapper>
                     <p>In which region or land did you stay?</p>
                     <FormControl fullWidth size="small">
