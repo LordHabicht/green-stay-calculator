@@ -15,7 +15,7 @@ const StarWrapper = styled.div`
     transform: translateY(3px);
 `
 
-export const StarComponent = React.memo(() => {
+export const StarComponent = () => {
 
     const onStarClick = (index: number) => {
         let arr = [];
@@ -42,4 +42,4 @@ export const StarComponent = React.memo(() => {
         </StarWrapper>
     )
 
-});
+};
