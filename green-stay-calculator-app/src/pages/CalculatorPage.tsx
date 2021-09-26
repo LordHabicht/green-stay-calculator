@@ -49,11 +49,7 @@ const ItemLinkLabel = styled.span`
     }
 `
 
-type PageProps = {
-    id: number;
-}
-
-export const CalculatorPage: FC<PageProps> = ({ id }): ReactElement => {
+export const CalculatorPage = (): ReactElement => {
     /* function body */
     const [items, setItems] = useState([1]);
 

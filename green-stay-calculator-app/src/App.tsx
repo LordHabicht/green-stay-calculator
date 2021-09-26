@@ -33,10 +33,10 @@ function App() {
       <Wrapper>
         <Switch>
           <Route path="/result">
-            <ResultPage id={1} />
+            <ResultPage />
           </Route>
           <Route path="/">
-            <CalculatorPage id={2} />
+            <CalculatorPage />
           </Route>
         </Switch>
       </Wrapper>

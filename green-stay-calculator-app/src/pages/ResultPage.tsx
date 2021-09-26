@@ -6,6 +6,15 @@ import {
 import { Header } from '../components/Header';
 import { ResultComponent } from '../components/ResultComponent';
 import TextField from '@mui/material/TextField';
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+
+const StyledArrowCircleDownIcon = styled(ArrowCircleDownIcon)`
+    transform: rotate(90deg);
+    color: gray;
+    &:hover {
+        color: #0041a3
+    }
+`
 
 const StyledButton = styled.button`
     background-color: #0041a3;
@@ -58,12 +67,7 @@ const Spacer = styled.div`
     height: 5em;
 `
 
-type PageProps = {
-    id: number;
-}
-
-
-export const ResultPage: FC<PageProps> = ({ id }): ReactElement => {
+export const ResultPage = (): ReactElement => {
 
     const buttonClicked = () => {
         alert("An E-Mail has been sent.");
@@ -71,7 +75,7 @@ export const ResultPage: FC<PageProps> = ({ id }): ReactElement => {
 
     return (
         <div>
-            <StyledLink to="/">back</StyledLink>
+            <StyledLink to="/"><StyledArrowCircleDownIcon fontSize="large" /></StyledLink>
             <Header />
             <ResultComponent />
             <TextWrapper>

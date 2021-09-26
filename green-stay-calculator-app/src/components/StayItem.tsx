@@ -30,6 +30,9 @@ const FirstItemWrapper = styled(ItemWrapper)`
 const StyledDeleteIcon = styled(DeleteIcon)`
     color: gray;
     transform: translateY(8px);
+    &:hover {
+        color: #0041a3;
+    }
 `
 const SectionTitle = styled.h3`
     margin-bottom:0;
