@@ -11,12 +11,6 @@ const arrNumbers = ['First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Sev
 const Wrapper = styled.div`
     margin-top: 3em;
 `
-
-const DeleteLink = styled.a`
-    transform: translate(5px, -4px);
-    position: absolute;
-`
-
 const ItemWrapper = styled.div`
     display:inline-block;
     width: 45%;
@@ -28,8 +22,9 @@ const FirstItemWrapper = styled(ItemWrapper)`
 `
 
 const StyledDeleteIcon = styled(DeleteIcon)`
+    cursor: pointer;
     color: gray;
-    transform: translateY(8px);
+    transform: translateY(4px);
     &:hover {
         color: #0041a3;
     }
@@ -46,16 +41,10 @@ type ItemProps = {
 
 export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactElement => {
 
-    const region = "Germany";
-
-    const handleChange = () => {
-        console.log("change");
-    }
-
     return (
         <div>
             <Wrapper>
-                <SectionTitle>{arrNumbers[itemNumber]} stay {(itemNumber !== 0) && <DeleteLink href="" onClick={() => deleteHandler(itemNumber)}><StyledDeleteIcon fontSize="small" /></DeleteLink>}</SectionTitle>
+                <SectionTitle>{arrNumbers[itemNumber]} stay {(itemNumber !== 0) && <StyledDeleteIcon fontSize="small" onClick={() => deleteHandler(itemNumber)} />}</SectionTitle>
                 <FirstItemWrapper>
                     <p>In which region or land did you stay?</p>
                     <FormControl fullWidth size="small">
@@ -64,7 +53,6 @@ export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactEle
                             labelId="region-label"
                             id="region-select"
                             label="Region"
-                            onChange={handleChange}
                         >
                             <MenuItem value={'Denmark'}>Denmark</MenuItem>
                             <MenuItem value={'Germany'}>Germany</MenuItem>

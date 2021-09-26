@@ -57,9 +57,9 @@ export const CalculatorPage = (): ReactElement => {
         setItems(newItems);
     }
 
-    const deleteHandler = (itemNumber: number) => {
+    const deleteHandler = (index: number) => {
         const newItems = [...items];
-        newItems.splice(itemNumber, 1);
+        newItems.splice(index, 1);
         setItems([...newItems]);
     }
 
@@ -67,7 +67,7 @@ export const CalculatorPage = (): ReactElement => {
         <div>
             <Header />
             {items.map((itemNumber, index) => (
-                <StayItem key={index} itemNumber={index} deleteHandler={() => deleteHandler(itemNumber)} />
+                <StayItem key={itemNumber} itemNumber={index} deleteHandler={() => deleteHandler(index)} />
             ))}
 
             <AddItemLink onClick={() => onAddStayClick()} ><StyledControlPointIcon /><ItemLinkLabel>Add another stay</ItemLinkLabel></AddItemLink>
