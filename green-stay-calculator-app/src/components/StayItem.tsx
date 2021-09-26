@@ -1,5 +1,5 @@
 
-import React, { FC, MouseEventHandler, ReactElement } from 'react';
+import { FC, ReactElement } from 'react';
 import styled from 'styled-components';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { StarComponent } from './StarComponent';
@@ -45,7 +45,6 @@ type ItemProps = {
 
 
 export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactElement => {
-    /* function body */
 
     const region = "Germany";
 
@@ -67,11 +66,11 @@ export const StayItem: FC<ItemProps> = ({ itemNumber, deleteHandler }): ReactEle
                             label="Region"
                             onChange={handleChange}
                         >
+                            <MenuItem value={'Denmark'}>Denmark</MenuItem>
                             <MenuItem value={'Germany'}>Germany</MenuItem>
                             <MenuItem value={'Italy'}>Italy</MenuItem>
-                            <MenuItem value={'United'}>United Kingdom</MenuItem>
                             <MenuItem value={'Norway'}>Norway</MenuItem>
-                            <MenuItem value={'Denmark'}>Denmark</MenuItem>
+                            <MenuItem value={'United'}>United Kingdom</MenuItem>
                         </Select>
                     </FormControl>
                 </FirstItemWrapper>

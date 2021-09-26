@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import styled from 'styled-components';
 import {
     Link
@@ -11,6 +11,7 @@ import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 const StyledArrowCircleDownIcon = styled(ArrowCircleDownIcon)`
     transform: rotate(90deg);
     color: gray;
+    
     &:hover {
         color: #0041a3
     }
@@ -25,6 +26,7 @@ const StyledButton = styled.button`
     margin-left: 1em;
     padding: 12px 20px 12px 20px;
     transform: translateY(7px);
+   
     &:hover {
         background-color: #0041a380;
         cursor: pointer; 

@@ -6,7 +6,6 @@ import {
 import { StayItem } from '../components/StayItem';
 import { Header } from '../components/Header';
 import ControlPointIcon from '@material-ui/icons/ControlPoint';
-import { Button } from '@material-ui/core';
 
 const Footer = styled.div`
     margin: 0 auto;
@@ -43,14 +42,13 @@ const AddItemLink = styled.a`
 `
 
 const ItemLinkLabel = styled.span`
-
     &:hover {
         text-decoration:underline;
     }
 `
 
 export const CalculatorPage = (): ReactElement => {
-    /* function body */
+
     const [items, setItems] = useState([1]);
 
     const onAddStayClick = () => {
